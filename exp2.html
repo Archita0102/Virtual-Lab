@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+    <style>
+        *{box-sizing: border-box;}
+        .tab{
+            float: left;
+            border-right: 1px solid #ccc;
+            background-color: whitesmoke;
+            width:20%;
+            height:1000px;
+
+        }
+        .tab button{
+            display: block;
+            background-color: inherit;
+            color:black;
+            padding: 22px 16px;
+            width:100%;
+            border:none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 17px;
+            transition: 0.3s;
+            
+        }
+        .tab button:hover{
+            background-color: #ddd;
+        }
+        .tab  button.active{
+            background-color: #ccc;
+        }
+        .tabcontent{
+            float:left;
+            padding: 0px 12px;
+            width:80%;
+            border-left: none;
+            height:600px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="opencv(event,'Aim')"
+        id="defaultopen">AIM AND OBJECTIVE</button>
+        <button class="tablinks" onclick="opencv(event,'Theory')">THEORY</button>
+        <button class="tablinks" onclick="opencv(event,'Procedure')">PROCEDURE</button>
+        <button class="tablinks" onclick="opencv(event,'Simulator')">SIMULATOR</button>
+        <button class="tablinks" onclick="opencv(event,'Result')">RESULT AND CONCLUSION</button>
+
+
+    </div>
+
+    <div id="Aim" class="tabcontent">
+        <h1><b>AIM</b></h1>
+        <p>To study transmission (Attenuation) Characteristics of Optical Fiber</p>
+
+    </div>
+    <div id="Theory" class="tabcontent">
+        <h1><b>THEORY</b></h1>
+        <h2 style="text-decoration: underline;">PART 1</h2>
+        <p>Attenuation in optical Fiber occurs due to following reasons 
+            <ul>
+                <li>Infrared Absorption</li>
+                <li>Ultraviolet Absorption</li>
+                <li>Rayleigh Scattering</li>
+            </ul>
+            <h3>INFRARED ABSORPTION MODEL</h3>
+            <ul>
+                <li>Infrared or IR absorption is associated with the characteristic vibration frequency of the 
+                    particular chemical bond between the atoms of which the fiber is composed</li>
+                <li>An interaction between the vibrating bond and the electromagnetic field of the optical signal results in a transfer of energy 
+                    from the field to bond, thereby causing absorption</li>
+            </ul>
+            <h3>ULTRAVOILET ABSORPTION MODEL</h3>
+            <ul>
+                <li>Ultraviolet or UV absorption results from electronic absorption bands in the 
+                    ultraviolet region</li>
+                <li>The electronic absorption bands are associated with the band gaps of amorphous 
+                    glass materials</li>
+                <li>Absorption occurs when a photon interacts with an electron in the valence band 
+                    and excites it to a higher energy level</li>
+                <li>The UV absorption at any wavelength can be expressed as a function of the mole 
+                    fraction x of Ge02</li>
+            </ul>
+            <h3>RAYLEIGH SCATTERING</h3>
+            <ul>
+                <li>Because of the granular appearance of atoms or molecules of the glass fiber, light transmitted through the fiber suffers
+                         scattering loss. This is known as Rayleigh scattering loss</li>
+                <li>Rayleigh scattering losses in a fiber are typically determined through experimental measurement. The loss is expressed 
+                        in decibels per kilometer</li>
+            </ul>
+            <h3>THE VARIATION OF VARIOUS ATTENUATION MECHANISMS WITH WAVELENGTH</h3>
+            <ol>
+                <li>
+                    Infrared Absorption
+                </li>
+                <li>
+                    Ultraviolet Absorption
+                </li>
+                <li>
+                    Rayleight Scattering
+                </li>
+            </ol>
+            <h4 style="border:2px;background-color: darkgray;color:black;width:80%;height:50px;text-align:center">For each setting of attenuation mechanism, vary the wavelength (0.81.5micro meter)and compute attenuation, each 
+                result will be one entry  of  the table </h4>
+        </p>
+        <h2 style="text-decoration: underline;">PART 2</h2>
+        <p>
+            Fiber loss is defined as the ratio of the optical output power Pout from a fiber of length L to the optical input power Pin. The symbol á is commonly used to 
+            express loss in decibels per kilometer: 
+            <p>• α = 10/ L (log(Pin/ Pout))</p> 
+            <p>At 1550 nm, 
+            α =0.2 dB/Km  Choose, Pin =1mw, Determine Pout for different length of Fiber from above expression,  for each setting of length, Pout will be one entry of the table.</p>  
+        </p>
+
+    </div>
+    <div id="Procedure" class="tabcontent">
+        <h3>PROCEDURE</h3>
+        <p>London is my home</p>
+
+    </div>
+    <div id="Simulator" class="tabcontent">
+        <h3>SIMULATOR</h3>
+        <p>London is my home</p>
+
+    </div>
+    <div id="Result" class="tabcontent">
+        <h3>RESULT AND CONCLUSION</h3>
+        <p>dfhduf</p>
+
+
+    <script>
+        function opencv(evt,cityname){
+            var i,tabcontent,tablinks;
+            tabcontent=document.getElementsByClassName("tabcontent");
+            for(i=0;i<tabcontent.length;i++){
+                tabcontent[i].style.display="none";
+            }
+            tablinks=document.getElementsByClassName("tablinks");
+            for(i=0;i<tablinks.length;i++){
+                tablinks[i].className=tablinks[i].className.replace("active","");
+            }
+            document.getElementById(cityname).style.display="block";
+            evt.currentTarget.getElementsByClassName+="active";
+        }
+        document.getElementById("defaultopen").click()
+    </script>
+
+</body>
+</html>

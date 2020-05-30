@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>VIRTUAL LAB</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+<style>
+    body{
+        background-image: url('https://static1.squarespace.com/static/56eddde762cd9413e151ac92/570cb87b5bd33022b93a0272/5cb7499f971a187e250ffb50/1555930869261/fibre+optic.jpg?format=1500w');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover ;
+
+    }
+    .flex-container{
+        display:flex;
+        flex-direction: row;
+    }
+    .tab{
+        overflow:hidden;
+        border:1px solid;
+        background-color:hsl(214, 100%, 38%);
+    }
+    .tab button{
+        background-color: inherit;
+        float: left;
+        border:none;
+        outline:none;
+        cursor:pointer;
+        padding:14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        color:chartreuse;
+    }
+    .tab button:hover{
+        background-color: hsl(214, 100%, 72%);
+    }
+    .tab button.active{
+        background-color:rgb(122, 153, 255);
+    }
+    .tabcontent{
+        display:none;
+        padding: 6px 12px;
+        border:none;
+        border-top: none;
+    }
+    
+    .image{
+        border-radius: 50%;
+        margin-left:700px;
+        margin-top: 50px;
+    }
+    a:hover{
+        color: yellow;
+    }
+    .link{
+        color:yellowgreen;
+    }
+</style>
+</head>
+<body>
+    <!--The heading--> 
+    <div class="flex-container">
+    <img style="margin-left: 140px;margin-top: 20px; height:60px ;width:60px;" 
+    src="C:\Users\Admin\Desktop\council work\cropped-favicon.png">
+    <h3 style="color:rgb(255,255,75);font-weight: bolder;text-align: center;text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif
+    ;font-size:30px;padding-left:20px;text-shadow: black 5px 5px;">
+    <b>VIVEKANAND EDUCATION SOCIETY'S INSTITUTE OF TECHNOLOGY</b></h3>
+    </div><br>
+    
+    <div class="tab">
+        <button class="tablinks" onclick="opencv(event,'Home')"
+        id="defaultopen">HOME</button>
+        <button class="tablinks" onclick="opencv(event,'About')">ABOUT</button>
+        <button class="tablinks" onclick="opencv(event,'Contact')">CONTACT</button>
+
+
+    </div>
+    <div id="Home" class="tabcontent">
+        <!--centre text-->
+    <h2 style="text-align: center;color: white;font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    ">
+      WELCOME TO THE VIRTUAL LABORATORY OF FIBRE OPTICS</h2><br>
+
+    <!--list of experiments-->
+    <div style="text-align: left;">
+        <h3 style="color: wheat;">LIST OF EXPERIMENTS</h3>
+        <ul>
+            <li><a class="link"  href="C:\Users\Admin\Desktop\INTERNSHIP\exp1.html">Transmission (Attenuation) Characteristics of Optical Fiber</a></li>
+            <li><a class="link" href="C:\Users\Admin\Desktop\INTERNSHIP\exp2.html">Transmission (Intermodel Dispersion) Characteristics of Multimode Optical Fiber</a></li>
+            <li><a class="link" >Misalignment losses of Optical Fiber</a></li>
+            <li><a class="link">Bending Losses of Optical Fiber</a></li>
+            <li><a class="link" >Link Budget of Optical Fiber Communication System</a></li>
+            <li><a class="link">Nonlinear Effects in Fiber</a></li>
+        </ul>
+        
+    <!--the image-->
+    </div>
+    <img class ="image"style="width:300px; ;" 
+    src="https://www.studyelectronics.in/wp-content/uploads/2018/12/fiber-optic-cable-730x411.jpg">
+    </div>
+    <div id="About" class="tabcontent">
+        <h3>ABOUT</h3>
+        <p>London is my home</p>
+
+    </div>
+    <div id="Contact" class="tabcontent">
+        <h3>CONTACT</h3>
+        <p>London is my home</p>
+    </div>
+
+    <script>
+        function opencv(evt,cityname){
+            var i,tabcontent,tablinks;
+            tabcontent=document.getElementsByClassName("tabcontent");
+            for(i=0;i<tabcontent.length;i++){
+                tabcontent[i].style.display="none";
+            }
+            tablinks=document.getElementsByClassName("tablinks");
+            for(i=0;i<tablinks.length;i++){
+                tablinks[i].className=tablinks[i].className.replace("active","");
+            }
+            document.getElementById(cityname).style.display="block";
+            evt.currentTarget.getElementsByClassName+="active";
+        }
+        document.getElementById("defaultopen").click()
+    </script>
+
+</body>
+</html>
